@@ -1,0 +1,77 @@
+\mode<presentation>
+
+\setbeamertemplate{background}{
+ \begin{tikzpicture}
+ \ifnum\thepage=1
+  \useasboundingbox (0,0) rectangle (\the\paperwidth,\the\paperheight);
+  \fill[color=kthblue] (0,0) rectangle (\the\paperwidth,128pt);
+  \draw [white] (0,23pt) -- (47pt,23pt) to [out=0,in=270] (50pt,26pt) -- (50pt,32pt) to [out=90,in=180] (53pt,35pt)%
+			  -- (\the\paperwidth,35pt);
+  \draw [white] (0,30pt) -- (124pt,30pt) to [out=0,in=270] (127pt,33pt) -- (127pt,97pt) to [out=90,in=180] (130pt,100pt)%
+			  -- (246pt,100pt) to [out=0,in=90] (249pt,97pt) -- (249pt,54pt) to [out=270,in=180] (252pt,51pt)%
+			  -- (285pt,51pt) to [out=0,in=270] (288pt,54pt) -- (288pt,81pt) to [out=90,in=180] (291pt,84pt)%
+			  -- (\the\paperwidth,84pt);
+  \draw [white] (0,35pt) -- (25pt,35pt) to [out=0,in=270] (28pt,38pt) -- (28pt,80pt) to [out=90,in=180] (31pt,83pt)%
+			  -- (145pt,83pt) to [out=0,in=90] (148pt,80pt) -- (148pt,22pt) to [out=270,in=180] (151pt,19pt)%
+			  -- (229pt,19pt) to [out=0,in=270] (232pt,22pt) -- (232pt,91pt) to [out=90,in=180] (235pt,94pt)%
+			  -- (292pt,94pt) to [out=0,in=90] (295pt,91pt) -- (295pt,30pt) to [out=270,in=180] (298pt,27pt)%
+			  -- (\the\paperwidth,27pt);
+  \draw [white] (0,84pt) -- (15pt,84pt) to [out=0,in=90] (18pt,81pt) -- (18pt,66pt) to [out=270,in=180] (21pt,63pt)%
+			  -- (43pt,63pt) to [out=0,in=270] (46pt,66pt) -- (46pt,76pt) to [out=90,in=180] (49pt,79pt)%
+			  -- (75pt,79pt) to [out=0,in=90] (78pt,76pt) -- (78pt,71pt) to [out=270,in=180] (81pt,68pt)%
+			  -- (270pt,68pt) to [out=0,in=270] (273pt,71pt) -- (273pt,108pt) to [out=90,in=180] (276pt,111pt)%
+			  -- (338pt,111pt) to [out=0,in=90] (341pt,108pt) -- (341pt,77pt) to [out=270,in=180] (344pt,74pt)%
+			  -- (\the\paperwidth,74pt);
+  \draw [white] (0pt,94pt) -- (32pt,94pt) to [out=0,in=90] (35pt,91pt) -- (35pt,54pt) to [out=270,in=180] (38pt,51pt)%
+			  -- (173pt,51pt) to [out=0,in=270] (176pt,54pt) -- (176pt,75pt) to [out=90,in=180] (179pt,78pt)%
+			  -- (323pt,78pt) to [out=0,in=90] (326pt,75pt) -- (326pt,67pt) to [out=270,in=180] (329pt,64pt)%
+			  -- (\the\paperwidth,64pt);			  
+  {\node[anchor=south west] at (5pt,221pt){\includegraphics[width=40pt,keepaspectratio]{KTH_Logotyp_RGB_2013.eps}};}
+  {\node[anchor=south west] at (270pt,247pt){
+											\begin{beamercolorbox}[wd=0.2\paperwidth]{kthheader}
+												\insertkthheader
+											\end{beamercolorbox}
+											};}
+  %\begin{picture}(364.19536,273.14662)(0,0)
+  %\put(10,223.14662){\includegraphics[width=40pt,keepaspectratio]{KTH_Logotyp_RGB_2013.eps}}
+  %\end{picture}
+ \fi
+ \ifnum\thepage>1\relax%
+  \fill[white] (0,0) rectangle (\the\paperwidth,\the\paperheight);
+  %\fill[color=kthblue] (0,0) rectangle (\the\paperwidth,35pt);
+  \path [fill=kthblue] (0,0) -- (0,23pt) -- (47pt,23pt) to [out=0,in=270] (50pt,26pt) -- (50pt,32pt) to [out=90,in=180] (53pt,35pt)%
+			  -- (\the\paperwidth,35pt) -- (\the\paperwidth,0) -- (0,0);
+  {\node[anchor=south west] at (5pt,231pt){\includegraphics[width=30pt,keepaspectratio]{KTH_Logotyp_RGB_2013.eps}};}
+  %\begin{picture}(364.19536,273.14662)(0,0)
+  %\put(10,233.14662){\includegraphics[width=30pt,keepaspectratio]{KTH_Logotyp_RGB_2013.eps}}
+  %\end{picture}
+ \fi
+ \end{tikzpicture}
+}
+
+% Title page
+\defbeamertemplate*{title page}{kth}[1][]
+{ 
+   \begin{columns}
+   \column[t]{0.18\paperwidth}
+   \column[t]{0.7\paperwidth}
+	\begin{center}
+	 ~
+      \begin{beamercolorbox}[wd=0.7\paperwidth,leftskip=15pt,#1]{title page header}
+        \usebeamerfont{title}\inserttitle\par%
+	    \usebeamerfont{title}\insertsubtitle\par%
+		\vskip10pt%
+		\usebeamerfont{author}\insertauthor%
+      \end{beamercolorbox}%
+	 ~ 
+	\end{center}
+	\end{columns}
+  \vspace{110pt}	
+}
+
+% Items
+\setbeamertemplate{items}[square]
+\setbeamertemplate{sections/subsections in toc}[square]
+\setbeamertemplate{footline}[kth]
+
+\mode<all>
