@@ -7,12 +7,12 @@
   \begin{beamercolorbox}[wd=\paperwidth,ht=1.2cm]{frametitle} 
   \begin{tikzpicture}
   \useasboundingbox (0,0) rectangle (\the\paperwidth,30pt);
-  \fill[blue!50!cyan!80] (50pt,0) rectangle (\the\paperwidth,30pt);
+  %\fill[blue!50!cyan!80] (50pt,0) rectangle (\the\paperwidth,30pt);
    \ifx\insertframesubtitle\@empty%
-      {\node[anchor=west, white,font=\large] at (60pt,15pt){\insertframetitle};}
+      {\node[anchor=west, font=\large] at (60pt,15pt){\insertframetitle};}
    \else%
-      {\node[anchor= west, white,font=\large] at (60pt,20pt){\insertframetitle};%
-       \node[anchor= west, white,font=\small] at (60pt,8pt){\insertframesubtitle};}%
+      {\node[anchor= west, font=\large] at (60pt,20pt){\insertframetitle};%
+       \node[anchor= west, font=\small] at (60pt,8pt){\insertframesubtitle};}%
    \fi
   \end{tikzpicture}
   \end{beamercolorbox}
@@ -21,14 +21,22 @@
 % Footline
 \defbeamertemplate*{footline}{kth}[1][]
 {
-	\ifnum\thepage=1
-	\vskip0pt
-	\fi
-	\ifnum\thepage>1\relax%
+	%\ifnum\thepage=1
+	%\vskip0pt
+	%\fi
+	%\ifnum\thepage>1\relax%
 		\raisebox{4pt}[0pt][0pt]{\begin{beamercolorbox}[wd=\paperwidth,ht=31pt,rightskip=7pt]{footline}
-			\hfill \inserttitle \hspace{1pt} - \insertsubtitle
+			\hfill \insertauthor{} -- \inserttitle \hspace{1pt} \insertsubtitle
 		\end{beamercolorbox}}%
-	\fi
+	%\fi
+	% \begin{beamercolorbox}[wd=\paperwidth,leftskip=0pt,ht=128pt,#1]{footer}%
+	% \begin{tikzpicture}%
+	% \begin{scope}[x=1pt,y=1pt,draw=white,rounded corners=3pt,line width=0.15mm]%
+	% \draw (0,23) -- (50,23) -- (50,35) -- (\the\paperwidth,35);
+	% \end{scope}%
+	% \end{tikzpicture}%
+	% \vspace{6.55mm}
+	% \end{beamercolorbox}%
 }
 	
 \mode<all>
