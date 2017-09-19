@@ -1,67 +1,43 @@
 \mode<presentation>
 
-\setbeamertemplate{background}{
-\begin{tikzpicture}
-%\ifnum\thepage=1
-\useasboundingbox (0,0) rectangle (\the\paperwidth,\the\paperheight);
-% \fill[color=kthblue] (0,0) rectangle (\the\paperwidth,128pt);
-% \begin{scope}[x=1pt,y=1pt,draw=white,rounded corners=3pt]
-%   \draw (0,23) -- (50,23) -- (50,35) -- (\the\paperwidth,35);
-%   \draw (0,30) -- (127,30) -- (127,100) -- (249,100) -- (249,51) -- (288,51)
-%   -- (288,84) -- (\the\paperwidth,84);
-%   \draw (0,35) -- (28,35) -- (28,83) -- (148,83) -- (148,19) -- (232,19) --
-%   (232,94) -- (295,94) -- (295,27) -- (\the\paperwidth,27);
-%   \draw (0,84) -- (18,84) -- (18,63) -- (46,63) -- (46,79) -- (78,79) --
-%   (78,68) -- (273,68) -- (273,111) -- (341,111) -- (341,74) -- (\the\paperwidth,74);
-%   \draw(0,94) -- (35,94) -- (35,51) -- (176,51) -- (176,78) -- (326,78) --
-%   (326,64) -- (\the\paperwidth,64);
-% \end{scope}
-  \node[anchor=south west] at
-  (270pt,247pt){\begin{beamercolorbox}[wd=0.2\paperwidth]{kthheader}
-\insertkthheader
-\end{beamercolorbox}};
-  %\begin{picture}(364.19536,273.14662)(0,0)
-  %\put(10,223.14662){\includegraphics[width=40pt,keepaspectratio]{KTH_Logotyp_RGB_2013.eps}}
-  %\end{picture}
- %\fi
- %\ifnum\thepage>1\relax%
-  %\fill[white] (0,0) rectangle (\the\paperwidth,\the\paperheight);
-  %\fill[color=kthblue] (0,0) rectangle (\the\paperwidth,35pt);
+\setbeamertemplate{background}
+{%
+  \begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle (\the\paperwidth,\the\paperheight);
+  \node[anchor=south west] at (270pt,247pt){
+    \begin{beamercolorbox}[wd=0.2\paperwidth]{kthheader}
+      \insertkthheader
+    \end{beamercolorbox}
+  };
   \path [fill=kthblue] (0,0) -- (0,23pt) -- (47pt,23pt) to [out=0,in=270] (50pt,26pt) -- (50pt,32pt) to [out=90,in=180] (53pt,35pt)%
-			  -- (\the\paperwidth,35pt) -- (\the\paperwidth,0) --
-                          (0,0);
-\node[anchor=south west] at
+  -- (\the\paperwidth,35pt) -- (\the\paperwidth,0) -- (0,0);
+  \node[anchor=south west] at
   (5pt,221pt){\includegraphics[width=40pt,keepaspectratio]{KTH_Logotyp_RGB_2013.pdf}};
-% \node [anchor=north west] at (50pt,35pt) {Source or similar};
-  %{\node[anchor=south west] at (5pt,231pt){\includegraphics[width=30pt,keepaspectratio]{KTH_Logotyp_RGB_2013.pdf}};}
-  %\begin{picture}(364.19536,273.14662)(0,0)
-  %\put(10,233.14662){\includegraphics[width=30pt,keepaspectratio]{KTH_Logotyp_RGB_2013.eps}}
-  %\end{picture}
- %\fi
- \end{tikzpicture}
+  %\node [anchor=north west] at (50pt,35pt) {Source or similar};
+\end{tikzpicture}
 }
 
 % Title page
 \defbeamertemplate*{title page}{kth}[1][]
 {%
-      \begin{beamercolorbox}[wd=0.7\paperwidth,sep=40pt,dp=10pt,#1]{title page header}
-        \usebeamerfont{title}\inserttitle\par%
-	    \usebeamerfont{title}\insertsubtitle\par%
-		\vskip10pt%
-		\usebeamerfont{author}\insertauthor%
-      \end{beamercolorbox}%
-\begin{beamercolorbox}[wd=\paperwidth,leftskip=0pt,ht=128pt,#1]{title page banner}%
-\begin{tikzpicture}%
-\begin{scope}[x=1pt,y=1pt,draw=white,rounded corners=3pt,line width=0.15mm]%
-  \draw (0,23) -- (50,23) -- (50,35) -- (\the\paperwidth,35);
-  \draw (0,30) -- (127,30) -- (127,100) -- (249,100) -- (249,51) -- (288,51) -- (288,84) -- (\the\paperwidth,84);
-  \draw (0,35) -- (28,35) -- (28,83) -- (148,83) -- (148,19) -- (232,19) -- (232,94) -- (295,94) -- (295,27) -- (\the\paperwidth,27);
-  \draw (0,84) -- (18,84) -- (18,63) -- (46,63) -- (46,79) -- (78,79) -- (78,68) -- (273,68) -- (273,111) -- (341,111) -- (341,74) -- (\the\paperwidth,74);
-  \draw(0,94) -- (35,94) -- (35,51) -- (176,51) -- (176,78) -- (326,78) -- (326,64) -- (\the\paperwidth,64);
-\end{scope}%
-\end{tikzpicture}%
-\vspace{6.55mm}
-\end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=0.7\paperwidth,sep=40pt,dp=10pt,#1]{title page header}
+    \usebeamerfont{title}\inserttitle\par%
+    \usebeamerfont{title}\insertsubtitle\par%
+    \vskip10pt%
+    \usebeamerfont{author}\insertauthor%
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=\paperwidth,leftskip=0pt,ht=128pt,#1]{title page banner}%
+    \begin{tikzpicture}%
+      \begin{scope}[x=1pt,y=1pt,draw=white,rounded corners=3pt,line width=0.15mm]%
+        \draw (0,23) -- (50,23) -- (50,35) -- (\the\paperwidth,35);
+        \draw (0,30) -- (127,30) -- (127,100) -- (249,100) -- (249,51) -- (288,51) -- (288,84) -- (\the\paperwidth,84);
+        \draw (0,35) -- (28,35) -- (28,83) -- (148,83) -- (148,19) -- (232,19) -- (232,94) -- (295,94) -- (295,27) -- (\the\paperwidth,27);
+        \draw (0,84) -- (18,84) -- (18,63) -- (46,63) -- (46,79) -- (78,79) -- (78,68) -- (273,68) -- (273,111) -- (341,111) -- (341,74) -- (\the\paperwidth,74);
+        \draw(0,94) -- (35,94) -- (35,51) -- (176,51) -- (176,78) -- (326,78) -- (326,64) -- (\the\paperwidth,64);
+      \end{scope}%
+    \end{tikzpicture}%
+    \vspace{6.55mm}
+  \end{beamercolorbox}%
 }
 
 % Items
