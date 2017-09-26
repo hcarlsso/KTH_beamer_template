@@ -1,26 +1,27 @@
 \mode<presentation>
 
 \setbeamertemplate{background}
-{%
-  \begin{tikzpicture}
-  \useasboundingbox (0,0) rectangle (\the\paperwidth,\the\paperheight);
-  \node[anchor=south west] at (270pt,247pt){
-    \begin{beamercolorbox}[wd=0.2\paperwidth]{kthheader}
-      \insertkthheader
-    \end{beamercolorbox}
-  };
-  \path [fill=kthblue] (0,0) -- (0,23pt) -- (47pt,23pt) to [out=0,in=270] (50pt,26pt) -- (50pt,32pt) to [out=90,in=180] (53pt,35pt)%
-  -- (\the\paperwidth,35pt) -- (\the\paperwidth,0) -- (0,0);
-  \node[anchor=south west] at
-  (5pt,221pt){\includegraphics[width=40pt,keepaspectratio]{KTH_Logotyp_RGB_2013.pdf}};
+{%                    
+  %\begin{tikzpicture}
+  %\useasboundingbox (0,0) rectangle (\the\paperwidth,\the\paperheight);
+  %\node[anchor=south west] at (270pt,247pt){
+  %  \begin{beamercolorbox}[leftskip=1cm, wd=.4\paperwidth, dp=10pt, ht=30mm, sep=10pt]{kthheader}
+  %   \insertkthheader
+  %  \end{beamercolorbox}
+   %};
+  %\draw [fill=kthblue, x=1pt,y=1pt, draw=white, rounded corners=3pt, line width=0.15mm] (0,23) -- (50,23) -- (50,35) -- (\the\paperwidth,35) [rounded corners=0pt] -- (\the\paperwidth,0) [rounded corners=0pt] -- (0,0) [rounded corners=0pt] -- cycle;
+  %\path [fill=kthblue] (0,0) -- (0,23pt) -- (47pt,23pt) to [out=0,in=270] (50pt,26pt) -- (50pt,32pt) to [out=90,in=180] (53pt,35pt)%
+  %-- (\the\paperwidth,35pt) -- (\the\paperwidth,0) -- (0,0);
+  %\node[anchor=south west] at
+  %(5pt,221pt){\includegraphics[width=40pt,keepaspectratio]{KTH_Logotyp_RGB_2013.pdf}};
   %\node [anchor=north west] at (50pt,35pt) {Source or similar};
-\end{tikzpicture}
+  % \end{tikzpicture}
 }
 
 % Title page
-\defbeamertemplate*{title page}{kth}[1][]
+\defbeamertemplate*{title page}{kth}[1][]%
 {%
-  \begin{beamercolorbox}[wd=0.7\paperwidth,sep=40pt,dp=10pt,#1]{title page header}
+  \begin{beamercolorbox}[wd=0.7\paperwidth,sep=40pt,dp=10pt,#1]{title page header}%
     \usebeamerfont{title}\inserttitle\par%
     \usebeamerfont{title}\insertsubtitle\par%
     \vskip10pt%
