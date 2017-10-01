@@ -21,7 +21,11 @@
 % Title page
 \defbeamertemplate*{title page}{kth}[1][]%
 {%
-  \begin{beamercolorbox}[wd=0.7\paperwidth,sep=40pt,dp=10pt,#1]{title page header}%
+  \begin{beamercolorbox}[wd=.15\paperwidth, sep=.025\paperwidth, ht=.15\paperwidth, #1]{logo in head}%
+    \includegraphics[width=.1\paperwidth,keepaspectratio]{KTH_Logotyp_RGB_2013.pdf}%
+  \end{beamercolorbox}%
+                                                              %\paperheight-...
+  \begin{beamercolorbox}[wd=0.7\paperwidth,sep=40pt,dp=10pt,ht=16ex, #1]{title page header}%
     \usebeamerfont{title}\inserttitle\par%
     \usebeamerfont{title}\insertsubtitle\par%
     \vskip10pt%
