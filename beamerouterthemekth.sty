@@ -8,32 +8,32 @@
   \begin{beamercolorbox}[wd=.15\paperwidth, sep=.025\paperwidth, ht=.15\paperwidth, #1]{logo in head}%
     \includegraphics[width=.1\paperwidth,keepaspectratio]{KTH_Logotyp_RGB_2013.pdf}%
   \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.6\paperwidth, ht=.15\paperwidth, #1]{frametitle}% 
+  \begin{beamercolorbox}[wd=.6\paperwidth, ht=.15\paperwidth, center, #1]{frametitle}% 
     \ifx\insertframesubtitle\@empty%
       \strut\Large\insertframetitle%
     \else%
       \strut\Large\insertframetitle\par%
       \strut\large\insertframesubtitle%
     \fi%
-    \vfill  
+    \vfill%
   \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.25\paperwidth, ht=.15\paperwidth, #1]{header in head}%
+  \begin{beamercolorbox}[wd=.25\paperwidth, ht=.15\paperwidth, center, sep=.025\paperwidth, #1]{header in head}%
     \insertkthheader%
-  \end{beamercolorbox}}
+  \end{beamercolorbox}}%
 }
 
 % Footline
-\defbeamertemplate*{footline}{kth}[1][]
-{
-  %\raisebox{4pt}[0pt][0pt]{\begin{beamercolorbox}[wd=\paperwidth,ht=31pt,rightskip=7pt]{footline}
-  %  \hfill \insertauthor{} -- \inserttitle \hspace{1pt} \insertsubtitle
-  %\end{beamercolorbox}}%
-  \begin{beamercolorbox}[wd=\paperwidth,leftskip=0pt,ht=128pt,#1]{footer}%
+\defbeamertemplate*{footline}{kth}[1][]%
+{%1
+  \begin{beamercolorbox}[wd=\paperwidth, leftskip=0pt, ht=128pt, #1]{footer}%
     \begin{tikzpicture}%
       \begin{scope}[x=1pt,y=1pt,draw=white,rounded corners=3pt,line width=0.15mm]%
-        \draw [fill=blue, x=1pt,y=1pt, draw=white, rounded corners=3pt, line width=0.15mm] (0,23) -- (50,23) -- (50,35) -- (\the\paperwidth,35) [rounded corners=0pt] -- (\the\paperwidth,0) [rounded corners=0pt] -- (0,0) [rounded corners=0pt] -- cycle;
+        \draw [fill=kthblue, x=1pt,y=1pt, draw=white, rounded corners=3pt, line width=0.15mm] (0,20) -- (50,20) -- (50,32) -- (\the\paperwidth,32) [rounded corners=0pt, draw=none] -- (\the\paperwidth,0) [rounded corners=0pt, draw=none] -- (0,0) [rounded corners=0pt, draw=none] -- cycle;
       \end{scope}%
     \end{tikzpicture}%
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=\paperwidth, ht=0pt, sep=1ex, #1]{info in foot}%
+    \hfill \insertauthor{} -- \inserttitle\ \insertsubtitle\ \insertpagenumber%
   \end{beamercolorbox}%
 }
 	
