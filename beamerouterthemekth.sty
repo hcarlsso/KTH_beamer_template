@@ -10,15 +10,17 @@
   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=.6\paperwidth, ht=.15\paperwidth, center, #1]{frametitle}% 
     \ifx\insertframesubtitle\@empty%
-      \strut\Large\insertframetitle%
+      \strut\Large\insertframetitle\par%
+      \strut%
     \else%
       \strut\Large\insertframetitle\par%
       \strut\large\insertframesubtitle%
     \fi%
-    \vfill%
+    \vskip.02\paperwidth%
   \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.25\paperwidth, ht=.15\paperwidth, center, sep=.025\paperwidth, #1]{header in head}%
-    \insertkthheader%
+  \begin{beamercolorbox}[wd=.20\paperwidth, ht=.15\paperwidth, center, sep=.025\paperwidth, #1]{header in head}%
+    {\begin{flushleft}\insertkthheader\end{flushleft}}%
+    \vskip.04\paperwidth%
   \end{beamercolorbox}}%
 }
 
