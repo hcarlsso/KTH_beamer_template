@@ -34,7 +34,8 @@
   \begin{beamercolorbox}[wd=\paperwidth,leftskip=0pt,ht=128pt,#1]{title page banner}%
     \begin{tikzpicture}%
       \begin{scope}[x=1pt,y=1pt,draw=white,rounded corners=3pt,line width=0.15mm]%
-        \draw (0,23) -- (50,23) -- (50,35) -- (\the\paperwidth,35) [rounded corners=0pt, draw=none] (\the\paperwidth,0) [rounded corners=0pt, draw=none] -- (0,0) [rounded corners=0pt, draw=none] -- cycle;
+        \draw (0,23) -- (50,23) -- (50,35) -- (\the\paperwidth,35) {[rounded
+            corners=0pt, draw=none] (\the\paperwidth,0)  -- (0,0) -- cycle};
         \draw (0,30) -- (127,30) -- (127,100) -- (249,100) -- (249,51) -- (288,51) -- (288,84) -- (\the\paperwidth,84);
         \draw (0,35) -- (28,35) -- (28,83) -- (148,83) -- (148,19) -- (232,19) -- (232,94) -- (295,94) -- (295,27) -- (\the\paperwidth,27);
         \draw (0,84) -- (18,84) -- (18,63) -- (46,63) -- (46,79) -- (78,79) -- (78,68) -- (273,68) -- (273,111) -- (341,111) -- (341,74) -- (\the\paperwidth,74);
