@@ -28,8 +28,10 @@
   \begin{beamercolorbox}[wd=\paperwidth, leftskip=0pt, ht=128pt, #1]{footer}%
     \ifnum\thepage>1%
     \begin{tikzpicture}%
-      \begin{scope}[x=1pt,y=1pt,draw=kthblue]%
-        \draw [fill=kthblue] (0,20) {[rounded corners=3pt] -- (50,20) -- (50,35)} -- (\the\paperwidth,35) -- (\the\paperwidth,0) -- (0,0) -- cycle;
+      \begin{scope}[x=1pt,y=1pt,draw=kthblue]% Can be simplified a little bit
+                                % with Qrrbrbirlbel's tikzlibrarypaths.ortho.tex:
+        \draw [fill=kthblue] (0,20) [rounded corners=3pt] -| (50,35) [rounded
+          corners=0pt] -| (\the\paperwidth,0) -| (0,20);
       \end{scope}%
     \end{tikzpicture}%
     \fi
