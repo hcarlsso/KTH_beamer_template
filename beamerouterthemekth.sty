@@ -24,16 +24,21 @@
 
 % Footline
 \defbeamertemplate*{footline}{kth}[1][]%
-{%1
+{%
   \begin{beamercolorbox}[wd=\paperwidth, leftskip=0pt, ht=128pt, #1]{footer}%
+    \ifnum\thepage>1%
     \begin{tikzpicture}%
-      \begin{scope}[x=1pt,y=1pt,draw=white,rounded corners=3pt,line width=0.15mm]%
-        \draw [fill=kthblue, x=1pt,y=1pt, draw=white, rounded corners=3pt, line width=0.15mm] (0,20) -- (50,20) -- (50,32) -- (\the\paperwidth,32) [rounded corners=0pt, draw=none] -- (\the\paperwidth,0) [rounded corners=0pt, draw=none] -- (0,0) [rounded corners=0pt, draw=none] -- cycle;
+      \begin{scope}[x=1pt,y=1pt,draw=kthblue]%
+        \draw [fill=kthblue] (0,20) {[rounded corners=3pt] -- (50,20) -- (50,35)} -- (\the\paperwidth,35) -- (\the\paperwidth,0) -- (0,0) -- cycle;
       \end{scope}%
     \end{tikzpicture}%
+    \fi
   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=\paperwidth, ht=0pt, sep=1ex, #1]{info in foot}%
-    \hfill \insertauthor{} -- \inserttitle\ \insertsubtitle\ \insertpagenumber%
+    \ifnum\thepage>1%
+    \hfill \insertauthor{} --
+    \inserttitle\ \insertsubtitle\ \insertpagenumber%
+    \fi%
   \end{beamercolorbox}%
 }
 	
