@@ -6,22 +6,23 @@
   \leavevmode%
   \hbox{%
   \begin{beamercolorbox}[wd=.15\paperwidth, sep=.025\paperwidth, ht=.15\paperwidth, #1]{logo in head}%
-    \includegraphics[width=.1\paperwidth,keepaspectratio]{KTH_Logotyp_RGB_2013.pdf}%
+    \hskip-\beamer@leftmargin\includegraphics[width=.1\paperwidth,keepaspectratio]{KTH_Logotyp_RGB_2013.pdf}%
   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=.6\paperwidth, ht=.15\paperwidth, center, #1]{frametitle}% 
     \ifx\insertframesubtitle\@empty%
-      \strut\Large\insertframetitle\par%
+      \hskip-\beamer@leftmargin\strut\Large\insertframetitle\par%
       \strut%
     \else%
-      \strut\Large\insertframetitle\par%
-      \strut\large\insertframesubtitle%
+      \hskip-\beamer@leftmargin\strut\Large\insertframetitle\par%
+      \hskip-\beamer@leftmargin\strut\large\insertframesubtitle%
     \fi%
     \vskip.02\paperwidth%
   \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.20\paperwidth, ht=.15\paperwidth, center, sep=.025\paperwidth, #1]{header in head}%
-    {\begin{flushleft}\insertkthheader\end{flushleft}}%
-    \vskip.04\paperwidth%
-  \end{beamercolorbox}}%
+  %\begin{beamercolorbox}[wd=.20\paperwidth, ht=.15\paperwidth, center, sep=.025\paperwidth, #1]{header in head}%
+  %  \begin{flushleft}\insertkthheader\end{flushleft}}%
+  %  \vskip.04\paperwidth%
+  %\end{beamercolorbox}
+}%
 }
 
 % Footline
