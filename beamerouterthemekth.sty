@@ -37,11 +37,7 @@
           corners=0pt] -| (\the\paperwidth,0) -| (0,20);
       \end{scope}%
     \end{tikzpicture}%
-    %
-    \begin{textblock*}{90mm}(50pt+1ex,\the\paperheight-35pt+1ex)%
-      \textcolor{white}{Hello}% \usebeamerfont{footer} doesn't seem to work :(
-    \end{textblock*}%
-    \fi
+    \fi%
   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=\paperwidth, ht=0pt, sep=1ex, #1]{info in foot}%
     \ifnum\thepage>1%

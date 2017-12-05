@@ -22,4 +22,17 @@
 \newcommand{\insertkthheader}{\usebeamerfont{kthheader}\hskip-\beamer@leftmargin
   KTH ROYAL INSTITUTE \\ OF TECHNOLOGY}
 
+\newcommand{\footnoteone}{\@dblarg\beamer@footnoteone}
+\long\def\beamer@footnoteone[#1]#2{%
+  \def\insertfootnoteone{#2}%
+}
+\newcommand{\footnotetwo}{\@dblarg\beamer@footnotetwo}
+\long\def\beamer@footnotetwo[#1]#2{%
+  \def\insertfootnotetwo{#2}%
+}
+\newcommand{\footnotethree}{\@dblarg\beamer@footnotethree}
+\long\def\beamer@footnotethree[#1]#2{%
+  \def\insertfootnotethree{#2}%
+}
+
 \mode<all>
