@@ -9,13 +9,17 @@
     \hskip-\beamer@leftmargin\includegraphics[width=.1\paperwidth,keepaspectratio]{KTH_Logotyp_RGB_2013.pdf}%
   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=.6\paperwidth, ht=.15\paperwidth, center, #1]{frametitle}% 
-    \ifx\insertframesubtitle\@empty%
-      \hskip-\beamer@leftmargin\strut\Large\insertframetitle\par%
-      \strut%
-    \else%
-      \hskip-\beamer@leftmargin\strut\Large\insertframetitle\par%
+    \hskip-\beamer@leftmargin\strut\Large\insertframetitle\par%
+    \strut%
+    \ifx\insertframesubtitle%
       \hskip-\beamer@leftmargin\strut\large\insertframesubtitle%
     \fi%
+    \ifx\insertinstitute%
+      \hskip-\beamer@leftmargin\strut\large\insertinstitute%
+    \fi%
+    % \ifx\insert%
+    %   \insert%
+    % \fi
     \vskip.02\paperwidth%
   \end{beamercolorbox}%
   %\begin{beamercolorbox}[wd=.20\paperwidth, ht=.15\paperwidth, center, sep=.025\paperwidth, #1]{header in head}%
@@ -38,9 +42,9 @@
       \end{scope}%
     \end{tikzpicture}%
     %
-    \begin{textblock*}{90mm}(50pt+1ex,\the\paperheight-35pt+1ex)%
-      \textcolor{white}{Hello}% \usebeamerfont{footer} doesn't seem to work :(
-    \end{textblock*}%
+    % \begin{textblock*}{90mm}(50pt+1ex,\the\paperheight-35pt+1ex)%
+    %   \textcolor{white}{Hello}% \usebeamerfont{footer} doesn't seem to work :(
+    % \end{textblock*}%
     \fi
   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=\paperwidth, ht=0pt, sep=1ex, #1]{info in foot}%
