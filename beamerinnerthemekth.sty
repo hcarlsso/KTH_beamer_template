@@ -29,11 +29,12 @@
     \hskip-\beamer@leftmargin\usebeamerfont{title}\strut\inserttitle\par%
     \ifx\insertsubtitle\@empty\else%
       \hskip-\beamer@leftmargin\usebeamerfont{title}\strut\insertsubtitle\par%
-    \fi
+    \fi%
     \vskip10pt%
     \hskip-\beamer@leftmargin\usebeamerfont{author}\strut\insertauthor%
   \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=\paperwidth,leftskip=0pt,ht=128pt,#1]{title page banner}%
+  \begin{beamercolorbox}[wd=\paperwidth,leftskip=0pt,ht=128pt,#1]{title page
+      banner}%
     \begin{tikzpicture}%
       \begin{scope}[x=1pt,y=1pt,draw=white,rounded corners=3pt,line
           width=0.15mm]%
@@ -41,11 +42,11 @@
                                 %end up at y=0, due to tikz. Can be done in
                                 %another way?
         % Can be simplified further with Qrrbrbirlbel's tikzlibrarypaths.ortho.tex:
-        \draw (0,23) -| (50,35) -- (\the\paperwidth,35);
-        \draw (0,30) -| (127,100) -| (249,51) -| (288,84) -- (\the\paperwidth,84);
-        \draw (0,35) -| (28,83) -| (148,19) -| (232,94) -| (295,27) -- (\the\paperwidth,27);
-        \draw (0,84) -| (18,63) -| (46,79) -| (78,68) -| (273,111) -| (341,74) -- (\the\paperwidth,74);
-        \draw (0,94) -| (35,51) -| (176,78) -| (326,64) -- (\the\paperwidth,64);
+        \draw (0,20) -| (50,35) -- (\the\paperwidth,35);%
+        \draw (0,30) -| (127,100) -| (249,51) -| (288,84) -- (\the\paperwidth,84);%
+        \draw (0,35) -| (28,83) -| (148,19) -| (232,94) -| (295,27) -- (\the\paperwidth,27);%
+        \draw (0,84) -| (18,63) -| (46,79) -| (78,68) -| (273,111) -| (341,74) -- (\the\paperwidth,74);%
+        \draw (0,94) -| (35,51) -| (176,78) -| (326,64) -- (\the\paperwidth,64);%
       \end{scope}%
     \end{tikzpicture}%
   \end{beamercolorbox}%
