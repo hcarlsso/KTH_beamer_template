@@ -25,13 +25,15 @@
     \hskip-\beamer@leftmargin\includegraphics[width=.1\paperwidth,keepaspectratio]{KTH_Logotyp_RGB_2013.pdf}%
   \end{beamercolorbox}%
                                                               %\paperheight-...
-  \begin{beamercolorbox}[wd=0.85\paperwidth,sep=40pt,dp=10pt,ht=16ex, leftskip=.1\textwidth, #1]{title page header}%
+  \begin{beamercolorbox}[wd=0.85\paperwidth,sep=40pt,dp=10pt,ht=.4\paperheight, leftskip=.1\textwidth, #1]{title page header}%
     \hskip-\beamer@leftmargin\usebeamerfont{title}\strut\inserttitle\par%
     \ifx\insertsubtitle\@empty\else%
       \hskip-\beamer@leftmargin\usebeamerfont{title}\strut\insertsubtitle\par%
     \fi%
     \vskip10pt%
     \hskip-\beamer@leftmargin\usebeamerfont{author}\strut\insertauthor%
+    \ifx\insertemail\insertemail\fi\par%
+    \hskip-\beamer@leftmargin\usebeamerfont{author}\strut\insertinstitute%
   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=\paperwidth,leftskip=0pt,ht=128pt,#1]{title page
       banner}%

@@ -19,9 +19,15 @@
 \setbeamerfont*{kthheader}{size=\tiny}
 \setbeamerfont*{kthgraph}{size=\tiny}
 
+% \setbeamersize{text margin left=10mm,text margin right=10mm}
+
 \newcommand{\insertkthheader}{\usebeamerfont{kthheader}\hskip-\beamer@leftmargin
   KTH ROYAL INSTITUTE \\ OF TECHNOLOGY}
 
+\newcommand{\email}{\@dblarg\beamer@email}
+\long\def\beamer@email[#1]#2{%
+  \def\insertemail{#2}%
+}
 \newcommand{\footnoteone}{\@dblarg\beamer@footnoteone}
 \long\def\beamer@footnoteone[#1]#2{%
   \def\insertfootnoteone{#2}%
