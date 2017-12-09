@@ -1,41 +1,34 @@
 \mode<presentation>
 
-%\setbeamertemplate{background}
-%{%
-  %\begin{tikzpicture}
-  %\useasboundingbox (0,0) rectangle (\the\paperwidth,\the\paperheight);
-  %\node[anchor=south west] at (270pt,247pt){
-  %  \begin{beamercolorbox}[leftskip=1cm, wd=.4\paperwidth, dp=10pt, ht=30mm, sep=10pt]{kthheader}
-  %   \insertkthheader
-  %  \end{beamercolorbox}
-   %};
-  %\draw [fill=kthblue, x=1pt,y=1pt, draw=white, rounded corners=3pt, line width=0.15mm] (0,23) -- (50,23) -- (50,35) -- (\the\paperwidth,35) [rounded corners=0pt] -- (\the\paperwidth,0) [rounded corners=0pt] -- (0,0) [rounded corners=0pt] -- cycle;
-  %\path [fill=kthblue] (0,0) -- (0,23pt) -- (47pt,23pt) to [out=0,in=270] (50pt,26pt) -- (50pt,32pt) to [out=90,in=180] (53pt,35pt)%
-  %-- (\the\paperwidth,35pt) -- (\the\paperwidth,0) -- (0,0);
-  %\node[anchor=south west] at
-  %(5pt,221pt){\includegraphics[width=40pt,keepaspectratio]{KTH_Logotyp_RGB_2013.pdf}};
-  %\node [anchor=north west] at (50pt,35pt) {Source or similar};
-  % \end{tikzpicture}
-%}
-
 % Title page
 \defbeamertemplate*{title page}{kth}[1][]%
 {%
-\begin{beamercolorbox}[wd=.15\paperwidth, sep=.025\paperwidth, ht=.15\paperwidth, #1]{logo in head}%
-    \hskip-\beamer@leftmargin\includegraphics[width=.1\paperwidth,keepaspectratio]{KTH_Logotyp_RGB_2013.pdf}%
-  \end{beamercolorbox}%
-                                                              %\paperheight-...
-  \begin{beamercolorbox}[wd=0.85\paperwidth,sep=40pt,dp=10pt,ht=.4\paperheight, leftskip=.1\textwidth, #1]{title page header}%
-    \hskip-\beamer@leftmargin\usebeamerfont{title}\strut\inserttitle\par%
-    \ifx\insertsubtitle\@empty\else%
-      \hskip-\beamer@leftmargin\usebeamerfont{title}\strut\insertsubtitle\par%
-    \fi%
-    \vskip10pt%
-    \hskip-\beamer@leftmargin\usebeamerfont{author}\strut\insertauthor%
-    \ifx\insertemail\insertemail\fi\par%
-    \hskip-\beamer@leftmargin\usebeamerfont{author}\strut\insertinstitute%
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=\paperwidth,leftskip=0pt,ht=128pt,#1]{title page
+  \leavevmode%
+  \hbox{%
+    \hskip-\beamer@leftmargin%
+    \begin{beamercolorbox}[wd=\titlepagelogosize, sep=0.25\titlepagelogosize,
+        ht=\titlepagelogosize, #1]{title page logo in head}%
+      \includegraphics[width=0.5\titlepagelogosize, keepaspectratio]{KTH_Logotyp_RGB_2013.pdf}%
+    \end{beamercolorbox}%
+    \hskip\titlepagetitleskip%
+    \begin{beamercolorbox}[wd=\dimexpr\paperwidth-\beamer@rightmargin-\titlepagetitleskip-\titlepagelogosize,
+        sep=0pt,
+        dp=0pt,
+        ht=\dimexpr\paperheight-\titlepagebannerheight,
+        leftskip=\beamer@leftmargin,
+        #1]{title page header}%
+      \hskip-\beamer@leftmargin\usebeamerfont{title}\strut\inserttitle\par%
+      \ifx\insertsubtitle%
+        \hskip-\beamer@leftmargin\usebeamerfont{title}\strut\insertsubtitle\par%
+      \fi%
+      \vskip10pt%
+      \hskip-\beamer@leftmargin\usebeamerfont{author}\strut\insertauthor%
+      \ifx\insertemail\insertemail\fi\par%
+      \hskip-\beamer@leftmargin\usebeamerfont{author}\strut\insertinstitute\par%
+      \hskip-\beamer@leftmargin\usebeamerfont{author}\strut\insertdate%
+    \end{beamercolorbox}%
+  }
+  \begin{beamercolorbox}[wd=\paperwidth,leftskip=0pt,ht=\titlepagebannerheight,#1]{title page
       banner}%
     \begin{tikzpicture}%
       \begin{scope}[x=1pt,y=1pt,draw=white,rounded corners=3pt,line

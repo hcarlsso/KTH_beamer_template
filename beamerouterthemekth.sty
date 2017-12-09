@@ -5,15 +5,19 @@
 {%
   \leavevmode%
   \hbox{%
-  \begin{beamercolorbox}[wd=.15\paperwidth, sep=.025\paperwidth, ht=.15\paperwidth, #1]{logo in head}%
-    \hskip-\beamer@leftmargin\includegraphics[width=.1\paperwidth,keepaspectratio]{KTH_Logotyp_RGB_2013.pdf}%
+  \hskip-\beamer@leftmargin%
+  \begin{beamercolorbox}[wd=\logosize, sep=.25\logosize, ht=\logosize, #1]{logo in head}%
+    \includegraphics[width=.5\logosize,
+      keepaspectratio]{KTH_Logotyp_RGB_2013.pdf}%
   \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.6\paperwidth, ht=.15\paperwidth, center, #1]{frametitle}% 
+  \hskip\titleskip%
+  \begin{beamercolorbox}[wd=\dimexpr\paperwidth-\logosize-\beamer@rightmargin-\titleskip,
+      ht=\logosize, #1]{frametitle}% 
     \ifx\insertframesubtitle\@empty%
-      \hskip-\beamer@leftmargin\strut\Large\insertframetitle\strut%
+      \strut\Large\insertframetitle\strut%
     \else%
-      \hskip-\beamer@leftmargin\strut\Large\insertframetitle\par%
-      \hskip-\beamer@leftmargin\strut\large\insertframesubtitle%
+      \strut\Large\insertframetitle\par%
+      \strut\large\insertframesubtitle%
     \fi%
     \vskip.02\paperwidth%
   \end{beamercolorbox}%
@@ -27,7 +31,7 @@
 % Footline
 \defbeamertemplate*{footline}{kth}[1][]%
 {%
-  \begin{beamercolorbox}[wd=\paperwidth, leftskip=0pt, ht=128pt, #1]{footer}%
+  \begin{beamercolorbox}[wd=\paperwidth, leftskip=0pt, ht=\bannerheight, #1]{footer}%
     \ifnum\thepage>1%
     \begin{tikzpicture}%
       \begin{scope}[x=1pt,y=1pt,draw=kthblue]% Can be simplified a little bit

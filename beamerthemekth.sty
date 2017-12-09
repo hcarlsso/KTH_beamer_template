@@ -6,7 +6,27 @@
                          % footnotes
 \RequirePackage{etoolbox}
 
-\preto\frame{}
+%\preto\frame{}
+
+\newlength\titlepagelogosize
+\setlength\titlepagelogosize{0.13145833333\paperwidth}
+
+\newlength\titlepagebannerheight
+\setlength\titlepagebannerheight{0.47314814814814815\paperheight}
+
+\newlength\titlepagetitleskip
+\setlength\titlepagetitleskip{\beamer@leftmargin}
+
+\newlength\logosize
+\setlength\logosize{0.13145833333\paperwidth}
+
+\newlength\bannerheight
+\setlength\bannerheight{0.13240740740740742\paperheight}
+
+\newlength\titleskip
+\setlength\titleskip{\beamer@leftmargin}
+
+\setbeamersize{text margin left=.1778\paperwidth,text margin right=0.07\paperwidth}
 
 % Settings
 \usecolortheme{kth}
@@ -18,11 +38,7 @@
 
 \setbeamerfont*{kthheader}{size=\tiny}
 \setbeamerfont*{kthgraph}{size=\tiny}
-
-% \setbeamersize{text margin left=10mm,text margin right=10mm}
-
-\newcommand{\insertkthheader}{\usebeamerfont{kthheader}\hskip-\beamer@leftmargin
-  KTH ROYAL INSTITUTE \\ OF TECHNOLOGY}
+\setbeamerfont{title}{size=\large}
 
 \newcommand{\email}{\@dblarg\beamer@email}
 \long\def\beamer@email[#1]#2{%
