@@ -11,8 +11,7 @@
       keepaspectratio]{KTH_Logotyp_RGB_2013.pdf}%
   \end{beamercolorbox}%
   \hskip\titleskip%
-  \begin{beamercolorbox}[wd=\dimexpr\paperwidth-\logosize-\beamer@rightmargin-\titleskip,
-      ht=\logosize, #1]{frametitle}% 
+  \begin{beamercolorbox}[wd=\dimexpr\paperwidth-\beamer@leftmargin-\beamer@rightmargin, ht=\logosize, #1]{frametitle}%
     \ifx\insertframesubtitle\@empty%
       \strut\Large\insertframetitle\strut%
     \else%
@@ -21,10 +20,6 @@
     \fi%
     \vskip.02\paperwidth%
   \end{beamercolorbox}%
-  %\begin{beamercolorbox}[wd=.20\paperwidth, ht=.15\paperwidth, center, sep=.025\paperwidth, #1]{header in head}%
-  %  \begin{flushleft}\insertkthheader\end{flushleft}}%
-  %  \vskip.04\paperwidth%
-  %\end{beamercolorbox}
 }%
 }
 
@@ -36,7 +31,7 @@
     \begin{tikzpicture}%
       \begin{scope}[x=1pt,y=1pt,draw=kthblue]% Can be simplified a little bit
                                 % with Qrrbrbirlbel's tikzlibrarypaths.ortho.tex:
-        \draw [fill=kthblue] (0,20) [rounded corners=3pt] -| (50,35) [rounded
+        \draw [fill=kthblue] (0,23) [rounded corners=3pt] -| (50,35) [rounded
           corners=0pt] -| (\the\paperwidth,0) -| (0,20);
       \end{scope}%
     \end{tikzpicture}%
@@ -45,7 +40,7 @@
   \begin{beamercolorbox}[wd=\paperwidth, ht=0pt, sep=1ex, #1]{info in foot}%
     \ifnum\thepage>1%
       \hfill %
-      \insertpagenumber%
+      \insertframenumber%
     \fi%
   \end{beamercolorbox}%
 }

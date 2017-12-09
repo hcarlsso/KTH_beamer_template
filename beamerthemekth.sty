@@ -6,27 +6,31 @@
                          % footnotes
 \RequirePackage{etoolbox}
 
-%\preto\frame{}
+\setbeamersize{text margin left=.1778\paperwidth,text margin right=0.07\paperwidth}
 
 \newlength\titlepagelogosize
-\setlength\titlepagelogosize{0.13145833333\paperwidth}
+\setlength\titlepagelogosize{0.165\paperwidth}
 
 \newlength\titlepagebannerheight
 \setlength\titlepagebannerheight{0.47314814814814815\paperheight}
 
 \newlength\titlepagetitleskip
-\setlength\titlepagetitleskip{\beamer@leftmargin}
+\setlength\titlepagetitleskip{\beamer@leftmargin-\titlepagelogosize}
+
+\newlength\titlepagelogodepth
+\setlength\titlepagelogodepth{\paperheight-\titlepagelogosize-\titlepagebannerheight}
 
 \newlength\logosize
-\setlength\logosize{0.13145833333\paperwidth}
+\setlength\logosize{0.145\paperwidth}
 
 \newlength\bannerheight
 \setlength\bannerheight{0.13240740740740742\paperheight}
 
 \newlength\titleskip
-\setlength\titleskip{\beamer@leftmargin}
+\setlength\titleskip{\beamer@leftmargin-\logosize}
 
-\setbeamersize{text margin left=.1778\paperwidth,text margin right=0.07\paperwidth}
+\newlength\plotheight
+\setlength\plotheight{\dimexpr\paperheight-\logosize-\bannerheight}
 
 % Settings
 \usecolortheme{kth}
