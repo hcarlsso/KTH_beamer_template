@@ -27,7 +27,6 @@
 \defbeamertemplate*{footline}{kth}[1][]%
 {%
   \begin{beamercolorbox}[wd=\paperwidth, leftskip=0pt, ht=\bannerheight, #1]{footer}%
-    \ifnum\thepage>1%
     \begin{tikzpicture}%
       \begin{scope}[x=1pt,y=1pt,draw=kthblue]% Can be simplified a little bit
                                 % with Qrrbrbirlbel's tikzlibrarypaths.ortho.tex:
@@ -35,13 +34,10 @@
           corners=0pt] -| (\the\paperwidth,0) -| (0,20);
       \end{scope}%
     \end{tikzpicture}%
-    \fi%
   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=\paperwidth, ht=0pt, sep=1ex, #1]{info in foot}%
-    \ifnum\thepage>1%
       \hfill %
       \insertframenumber%
-    \fi%
   \end{beamercolorbox}%
 }
 

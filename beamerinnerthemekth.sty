@@ -22,13 +22,11 @@
       \ifx\insertsubtitle%
         \usebeamerfont{title}\strut\insertsubtitle\par%
       \fi%
+      \vskip20pt%
+      \usebeamerfont{author}\strut\insertauthor\par%
       \vskip10pt%
-      \usebeamerfont{author}\strut\insertauthor%
-      \ifx\insertemail%
-        \insertemail%
-      \fi\par%
-      \usebeamerfont{author}\strut\insertinstitute\par%
-      \usebeamerfont{author}\strut\insertdate%
+      \usebeamerfont{institute}\strut\insertinstitute\par%
+      \usebeamerfont{date}\strut\insertdate%
     \end{beamercolorbox}%
   }
   \hspace*{-0.3\beamer@leftmargin}%
