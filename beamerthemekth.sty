@@ -6,6 +6,11 @@
                          % footnotes
 \RequirePackage{etoolbox}
 
+\AtBeginDocument{
+  \providecommand\tikzexternaldisable{\relax}
+  \providecommand\tikzexternalenable{\relax}
+}
+
 \setbeamersize{text margin left=.1778\paperwidth,text margin right=0.07\paperwidth}
 
 \newlength\titlepagelogosize

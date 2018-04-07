@@ -32,6 +32,7 @@
   \hspace*{-0.3\beamer@leftmargin}%
   \begin{beamercolorbox}[wd=\paperwidth,leftskip=0pt,ht=\titlepagebannerheight,#1]{title page
       banner}%
+    \tikzexternaldisable%
     \begin{tikzpicture}%
       \begin{scope}[x=1pt,y=1pt,draw=white,rounded corners=3pt,line
           width=0.15mm]%
@@ -46,6 +47,7 @@
         \draw (0,94) -| (35,51) -| (176,78) -| (326,64) -- (\the\paperwidth,64);%
       \end{scope}%
     \end{tikzpicture}%
+    \tikzexternalenable%
   \end{beamercolorbox}%
 }
 
