@@ -30,10 +30,10 @@
       #1]{footer}%
     \tikzexternaldisable%
     \begin{tikzpicture}%
-      \begin{scope}[x=1pt,y=1pt,draw=kthblue]% Can be simplified a little bit
-                                % with Qrrbrbirlbel's tikzlibrarypaths.ortho.tex:
-        \draw [fill=kthblue] (0,23) [rounded corners=3pt] -| (50,35) [rounded
-          corners=0pt] -| (\the\paperwidth,0) -| (0,20);
+      \begin{scope}[draw=kthblue]%
+        \draw [fill=kthblue] (0,0.08334877\paperheight) [rounded corners=3pt]
+        -| (0.13791111\paperwidth,0.13243378\paperheight)
+        [rounded corners=0pt] -| (\the\paperwidth,0) -| cycle;
       \end{scope}%
     \end{tikzpicture}%
     \tikzexternalenable%
