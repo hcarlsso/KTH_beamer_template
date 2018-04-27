@@ -34,7 +34,7 @@
       banner}%
     \tikzexternaldisable%
     \begin{tikzpicture}%
-      \begin{scope}[x=1pt,y=1pt,draw=white,rounded corners=3pt,line
+      \begin{scope}[draw=white,rounded corners = 0.0109831130975\paperheight,line
           width=0.15mm]%
         \node [inner sep=0pt] at (0,0) {}; %Required to make bottom line not
                                 %end up at y=0, due to tikz. Can be done in
@@ -46,9 +46,27 @@
         (0.683698990\paperwidth,0.1867129089\paperheight) -|
         (0.790784375\paperwidth,0.3075271442\paperheight) -- (\the\paperwidth,0.307527144\paperheight);%
         
-        \draw (0,35) -| (28,83) -| (148,19) -| (232,94) -| (295,27) -- (\the\paperwidth,27);%
-        \draw (0,84) -| (18,63) -| (46,79) -| (78,68) -| (273,111) -| (341,74) -- (\the\paperwidth,74);%
-        \draw (0,94) -| (35,51) -| (176,78) -| (326,64) -- (\the\paperwidth,64);%
+        \draw (0,0.1281363\paperheight) -|
+        (0.0768818\paperwidth,0.30386613\paperheight) -|
+        (0.40637537\paperwidth,0.069559716\paperheight) -|
+        (0.6370208511\paperwidth,0.3441375437\paperheight) -|
+        (0.81000496\paperwidth,0.0988480179\paperheight) --
+        (\the\paperwidth,0.0988480179\paperheight);%
+        
+        \draw (0,0.3075271667\paperheight) -|
+        (0.04942403156\paperwidth,0.230645375\paperheight) -|
+        (0.126305858\paperwidth,0.289221978\paperheight) -|
+        (0.214170803\paperwidth,0.248950563\paperheight) -|
+        (0.749597812\paperwidth,0.40637518\paperheight) -|
+        (0.93631082\paperwidth,0.2709167897\paperheight) --
+        (\the\paperwidth,0.2709167897\paperheight);%
+        
+        \draw (0,0.344137544\paperheight) -|
+        (0.09610228\paperwidth,0.186712923\paperheight) -|
+        (0.483257197\paperwidth,0.28556094\paperheight) -|
+        (0.8951241271\paperwidth,0.234306413\paperheight) --
+        (\the\paperwidth,0.234306413\paperheight);%
+        
       \end{scope}%
     \end{tikzpicture}%
     \tikzexternalenable%
