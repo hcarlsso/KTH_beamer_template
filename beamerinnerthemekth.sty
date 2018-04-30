@@ -6,8 +6,8 @@
   \leavevmode%
   \hbox{%
     \hskip-\beamer@leftmargin%
-    \begin{beamercolorbox}[%wd=\titlepagelogosize, sep=0.25\titlepagelogosize,
-        %ht=\dimexpr\paperheight-\titlepagebannerheight, dp=0pt, 
+    \begin{beamercolorbox}[wd=\titlepagelogosize, sep=0.25\titlepagelogosize,
+        ht=\dimexpr\paperheight-\titlepagebannerheight, dp=0pt, 
         #1]{title page
         logo in head}%
       \includegraphics[width=0.5\titlepagelogosize,
@@ -16,7 +16,7 @@
     \end{beamercolorbox}%
     \hskip\titlepagetitleskip%
     \begin{beamercolorbox}[wd=\dimexpr\paperwidth-\beamer@leftmargin-\beamer@rightmargin-\titlepagetitleskip,
-        %ht=\dimexpr\paperheight-\titlepagebannerheight,
+        ht=\dimexpr\paperheight-\titlepagebannerheight,
         center,
         #1]{title page header}%
       \usebeamerfont{title}\strut\inserttitle\par%
@@ -30,8 +30,8 @@
       \usebeamerfont{date}\strut\insertdate%
     \end{beamercolorbox}%
   }
-  %\hspace*{-0.3\beamer@leftmargin}%
-  \begin{beamercolorbox}[wd=\paperwidth,leftskip=0pt,%ht=\titlepagebannerheight,
+  \hspace*{-0.3\beamer@leftmargin}%
+  \begin{beamercolorbox}[wd=\paperwidth,leftskip=0pt,ht=\titlepagebannerheight,
       #1]{title page banner}%
     \tikzexternaldisable%
     \begin{tikzpicture}%
