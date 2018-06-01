@@ -7,4 +7,4 @@ textpos.
 
 latex3 code is used for a couple of macros, such as placing footnotes.
 
-![example.png](https://raw.githubusercontent.com/Grimler91/KTH_beamer_template/master/example.png)
+![example.png](https://github.com/Grimler91/KTH_beamer_template/raw/master/example.png)
