@@ -2,9 +2,9 @@
 
 % Requirement
 \RequirePackage{tikz}
-\RequirePackage[absolute,overlay]{textpos} % Used until I can find a better way to place
-                         % footnotes
 \RequirePackage{etoolbox}
+\RequirePackage{xparse}
+\RequirePackage{expl3}
 
 \AtBeginDocument{
   \providecommand\tikzexternaldisable{\relax}
@@ -48,8 +48,58 @@
 
 \setbeamerfont*{kthheader}{size=\tiny}
 \setbeamerfont*{kthgraph}{size=\tiny}
-\setbeamerfont{institute}{size=\tiny}
-\setbeamerfont{author}{size=\footnotesize}
-\setbeamerfont{title}{size=\Large}
+\setbeamerfont*{institute}{size=\tiny}
+\setbeamerfont*{author}{size=\footnotesize}
+\setbeamerfont*{title}{size=\Large}
+\setbeamerfont*{footnote}{size=\small}
+
+\ExplSyntaxOn
+% footnote list
+\seq_new:N \__kth_footnotes
+\tl_new:N \__kth_footnote
+\cs_generate_variant:Nn \tl_if_eq:nnTF { o }
+\int_new:N \__footnote_counter
+\int_incr:N \__footnote_counter
+
+\NewDocumentCommand{\addFootnote}{ m }
+  {
+    \seq_put_right:Nx \__kth_footnotes { #1 }
+  }
+\NewDocumentCommand{\clearFootnotes}{ }
+  {
+    \seq_clear:N \__kth_footnotes
+    \tl_clear:N \__kth_footnote
+    \int_zero:N \__footnote_counter
+    \int_incr:N \__footnote_counter
+  }
+\NewDocumentCommand{\printFootnotes}{ o }
+  {
+    \bool_do_until:nn  { \seq_if_empty_p:N \__kth_footnotes }
+      {
+        \seq_if_empty:NTF \__kth_footnotes {}
+          {
+            \seq_pop_left:NN \__kth_footnotes \__kth_footnote
+            \tl_if_eq:onTF { #1 } { tikz }
+              {
+                \node [anchor=north~west, yshift=-1.3\baselineskip * \int_eval:n
+                  {\__footnote_counter - 1}] at (footnotes)
+                {\usebeamerfont{footnote} $^\int_use:N \__footnote_counter$\__kth_footnote};
+                \int_incr:N \__footnote_counter
+              }
+              {
+                \__kth_footnote
+                \int_incr:N \__footnote_counter
+              }
+          }
+      }
+  }
+\ExplSyntaxOff
+
+\makeatletter % tex.stackexchange.com/a/226351/49901
+\patchcmd{\beamer@doseveralframes}% <cmd>
+  {\beamer@reseteecodes}% <search>
+  {\beamer@reseteecodes\clearFootnotes}% <replace>
+  {}{}% <success><failure>
+\makeatother
 
 \mode<all>

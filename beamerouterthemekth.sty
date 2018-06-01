@@ -20,7 +20,7 @@
     \fi%
     \vskip.02\paperwidth%
   \end{beamercolorbox}%
-}%
+  }%
 }
 
 % Footline
@@ -29,18 +29,18 @@
   \begin{beamercolorbox}[wd=\paperwidth, leftskip=0pt, ht=\bannerheight,
       #1]{footer}%
     \tikzexternaldisable%
-    \begin{tikzpicture}%
+    \begin{tikzpicture}[overlay]%
       \begin{scope}[draw=kthblue]%
-        \draw [fill=kthblue] (0,0.08334877\paperheight) [rounded corners = 0.0109831130975\paperheight]
-        -| (0.13791111\paperwidth,0.13243378\paperheight)
-        [rounded corners=0pt] -| (\the\paperwidth,0) -| cycle;
+        \draw [fill=kthblue] (0,0.08334877\paperheight) [rounded corners =
+          0.0109831130975\paperheight] -|
+        (0.13791111\paperwidth,0.13243378\paperheight) [rounded corners=0pt]
+        -| (\the\paperwidth,0) -| cycle;
       \end{scope}%
+      \node (footnotes) at (0.13791111\paperwidth,0.13243378\paperheight) {};
+      \printFootnotes[tikz]%
+      \node [anchor=south east] at (\the\paperwidth,0) {\insertframenumber};
     \end{tikzpicture}%
     \tikzexternalenable%
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=\paperwidth, ht=0pt, sep=1ex, #1]{info in foot}%
-      \hfill %
-      \insertframenumber%
   \end{beamercolorbox}%
 }
 
