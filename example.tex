@@ -18,24 +18,36 @@
 \maketitle
 \end{frame}
 
-\begin{frame}{Frame 1}
-Bullet points:
 
-\begin{itemize}
-\item Point 1
-\item Point 2
-\item Point 3
+\addFootnote{Grimler H. Some publication}
+\addFootnote{Grimler H. Another publication}
+% Would be nice to not have to specify footnotes before \begin{frame}
+\begin{frame}{Features of the theme}
+  The theme uses native beamercolorboxes under the hood.
+  \begin{itemize}
+    \item This means that background/font-colors can be changed using \textbackslash setbeamercolor\{\}\{\}
+    \item The colored theme parts are made with tikz instead of included as
+        images. Color can therefore relatively easy be changed (TODO: make
+        theme accept color as option)
+    \item The drawn parts are ``protected'' from \textbackslash
+      tikzexternalize to prevent lots of generated banner images if using the
+      tikzexternal library (see
+      \href{https://tex.stackexchange.com/questions/295885}
+           {tex.stackexchange.com/questions/295885})
+    \item References can be added in the footer using the command
+      \textbackslash addFootnote\{Grimler H. Some publication\} $^{1,2}$
 \end{itemize}
-
 \vfill
 \end{frame}
 
-\begin{frame}{2}
-  \frametitle{This is a test title}
-  \framesubtitle{Test test}
-  Hello!
-  \vfill
-  hellloooo
-\end{frame}
-
+{
+  \setbeamercolor{footer}{bg = kthred}
+  \setbeamercolor{itemize item}{fg = kthred}
+  \begin{frame}{Other colors}
+    \begin{itemize}
+      \item The colors on this slide have been changed with \textbackslash
+        setbeamercolor\{footer\} and \textbackslash setbeamercolor\{itemize item\}\{fg = kthred\}
+    \end{itemize}
+  \end{frame}
+}
 \end{document}
