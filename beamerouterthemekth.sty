@@ -30,8 +30,11 @@
       #1]{footer}%
     \tikzexternaldisable%
     \begin{tikzpicture}[overlay]%
-      \begin{scope}[draw=kthblue]%
-        \draw [fill=kthblue] (0,0.08334877\paperheight) [rounded corners =
+      \begin{scope}[draw=footer.bg]%
+        % I need a beamercolorbox with custom shape to solve this more nicely:
+        \draw [fill=white, draw=white] (0, 0) rectangle (\the\paperwidth,
+        0.13243378\paperheight);
+        \draw [fill=footer.bg] (0,0.08334877\paperheight) [rounded corners =
           0.0109831130975\paperheight] -|
         (0.13791111\paperwidth,0.13243378\paperheight) [rounded corners=0pt]
         -| (\the\paperwidth,0) -| cycle;

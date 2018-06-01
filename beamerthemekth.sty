@@ -6,6 +6,7 @@
 \RequirePackage{xparse}
 \RequirePackage{expl3}
 
+% To prevent error if tikzexternal isn't loaded
 \AtBeginDocument{
   \providecommand\tikzexternaldisable{\relax}
   \providecommand\tikzexternalenable{\relax}
